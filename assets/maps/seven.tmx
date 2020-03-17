@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.4" orientation="orthogonal" renderorder="right-down" width="32" height="24" tilewidth="32" tileheight="32" infinite="0" nextobjectid="53">
+ <properties>
+  <property name="on_enter">local state=  states.get_state(&quot;game&quot;)
+local label = state.message_label
+local message = &quot;I think I ate too many circles.&quot;
+
+label:set_text(message)
+
+state.timer:after(5, function()
+        label:set_text(&quot;&quot;)
+end)</property>
+ </properties>
+ <tileset firstgid="1" name="blue" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="../graphics/blue.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="2" name="white" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="../graphics/white.png" width="32" height="32"/>
+ </tileset>
+ <layer name="floor" width="32" height="24">
+  <data encoding="csv">
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+</data>
+ </layer>
+ <objectgroup name="entities">
+  <object id="1" type="spawn" x="256" y="352" width="32" height="64"/>
+  <object id="3" type="kill_ball" x="352" y="352" width="32" height="32">
+   <properties>
+    <property name="path" value="4 7 8"/>
+    <property name="speed" type="int" value="12"/>
+   </properties>
+  </object>
+  <object id="4" type="kill_ball_node" x="384" y="352" width="32" height="32"/>
+  <object id="7" type="kill_ball_node" x="384" y="384" width="32" height="32"/>
+  <object id="8" type="kill_ball_node" x="352" y="384" width="32" height="32"/>
+  <object id="9" type="wall" x="224" y="416" width="576" height="32"/>
+  <object id="13" type="wall" x="224" y="320" width="576" height="32"/>
+  <object id="14" type="wall" x="224" y="352" width="32" height="64"/>
+  <object id="15" type="kill_ball" x="416" y="352" width="32" height="32">
+   <properties>
+    <property name="path" value="16 17 18"/>
+    <property name="speed" type="int" value="12"/>
+   </properties>
+  </object>
+  <object id="16" type="kill_ball_node" x="448" y="352" width="32" height="32"/>
+  <object id="17" type="kill_ball_node" x="448" y="384" width="32" height="32"/>
+  <object id="18" type="kill_ball_node" x="416" y="384" width="32" height="32"/>
+  <object id="19" type="kill_ball" x="480" y="352" width="32" height="32">
+   <properties>
+    <property name="path" value="20 21 22"/>
+    <property name="speed" type="int" value="12"/>
+   </properties>
+  </object>
+  <object id="20" type="kill_ball_node" x="512" y="352" width="32" height="32"/>
+  <object id="21" type="kill_ball_node" x="512" y="384" width="32" height="32"/>
+  <object id="22" type="kill_ball_node" x="480" y="384" width="32" height="32"/>
+  <object id="23" type="kill_ball" x="544" y="352" width="32" height="32">
+   <properties>
+    <property name="path" value="24 25 26"/>
+    <property name="speed" type="int" value="12"/>
+   </properties>
+  </object>
+  <object id="24" type="kill_ball_node" x="576" y="352" width="32" height="32"/>
+  <object id="25" type="kill_ball_node" x="576" y="384" width="32" height="32"/>
+  <object id="26" type="kill_ball_node" x="544" y="384" width="32" height="32"/>
+  <object id="27" type="wall" x="768" y="352" width="32" height="64"/>
+  <object id="28" type="exit" x="736" y="352" width="32" height="64">
+   <properties>
+    <property name="map_name" value="eight"/>
+   </properties>
+  </object>
+  <object id="29" type="kill_ball" x="608" y="352" width="32" height="32">
+   <properties>
+    <property name="path" value="30 31 32"/>
+    <property name="speed" type="int" value="12"/>
+   </properties>
+  </object>
+  <object id="30" type="kill_ball_node" x="640" y="352" width="32" height="32"/>
+  <object id="31" type="kill_ball_node" x="640" y="384" width="32" height="32"/>
+  <object id="32" type="kill_ball_node" x="608" y="384" width="32" height="32"/>
+ </objectgroup>
+</map>

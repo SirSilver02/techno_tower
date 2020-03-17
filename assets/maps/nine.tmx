@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.4" orientation="orthogonal" renderorder="right-down" width="32" height="24" tilewidth="32" tileheight="32" infinite="0" nextobjectid="103">
+ <properties>
+  <property name="on_enter">local state=  states.get_state(&quot;game&quot;)
+local label = state.message_label
+local message=  &quot;Yes. Yes it does.&quot;
+
+label:set_text(message)
+
+state.timer:after(5, function()
+        label:set_text(&quot;&quot;)
+end)</property>
+ </properties>
+ <tileset firstgid="1" name="blue" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="../graphics/blue.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="2" name="white" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="../graphics/white.png" width="32" height="32"/>
+ </tileset>
+ <layer name="floor" width="32" height="24">
+  <data encoding="csv">
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,2,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,2,1,2,1,2,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,2,1,2,1,2,1,2,1,2,1,2,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+</data>
+ </layer>
+ <objectgroup name="entities">
+  <object id="1" type="spawn" x="288" y="384" width="32" height="96"/>
+  <object id="7" type="kill_ball" x="352" y="448" width="32" height="32">
+   <properties>
+    <property name="path" value="50"/>
+    <property name="speed" type="int" value="12"/>
+   </properties>
+  </object>
+  <object id="13" type="wall" x="256" y="352" width="128" height="32"/>
+  <object id="15" type="wall" x="480" y="352" width="32" height="128"/>
+  <object id="18" type="wall" x="256" y="384" width="32" height="96"/>
+  <object id="19" type="wall" x="352" y="256" width="32" height="96"/>
+  <object id="21" type="wall" x="352" y="224" width="288" height="32"/>
+  <object id="22" type="wall" x="608" y="256" width="32" height="96"/>
+  <object id="25" type="wall" x="256" y="480" width="480" height="32"/>
+  <object id="27" type="wall" x="608" y="352" width="128" height="32"/>
+  <object id="44" type="wall" x="704" y="384" width="32" height="96"/>
+  <object id="47" type="exit" x="672" y="384" width="32" height="96">
+   <properties>
+    <property name="map_name" value="ten"/>
+   </properties>
+  </object>
+  <object id="50" type="kill_ball_node" x="352" y="384" width="32" height="32"/>
+  <object id="68" type="kill_ball" x="384" y="384" width="32" height="32">
+   <properties>
+    <property name="path" value="75"/>
+    <property name="speed" type="int" value="12"/>
+   </properties>
+  </object>
+  <object id="69" type="kill_ball" x="416" y="448" width="32" height="32">
+   <properties>
+    <property name="path" value="76"/>
+    <property name="speed" type="int" value="12"/>
+   </properties>
+  </object>
+  <object id="70" type="kill_ball" x="448" y="384" width="32" height="32">
+   <properties>
+    <property name="path" value="77"/>
+    <property name="speed" type="int" value="12"/>
+   </properties>
+  </object>
+  <object id="71" type="kill_ball" x="384" y="352" width="32" height="32">
+   <properties>
+    <property name="path" value="78"/>
+    <property name="speed" type="int" value="12"/>
+   </properties>
+  </object>
+  <object id="72" type="kill_ball" x="448" y="320" width="32" height="32">
+   <properties>
+    <property name="path" value="80"/>
+    <property name="speed" type="int" value="12"/>
+   </properties>
+  </object>
+  <object id="75" type="kill_ball_node" x="384" y="448" width="32" height="32"/>
+  <object id="76" type="kill_ball_node" x="416" y="384" width="32" height="32"/>
+  <object id="77" type="kill_ball_node" x="448" y="448" width="32" height="32"/>
+  <object id="78" type="kill_ball_node" x="448" y="352" width="32" height="32"/>
+  <object id="80" type="kill_ball_node" x="448" y="256" width="32" height="32"/>
+  <object id="83" type="kill_ball" x="480" y="256" width="32" height="32">
+   <properties>
+    <property name="path" value="85"/>
+    <property name="speed" type="int" value="12"/>
+   </properties>
+  </object>
+  <object id="84" type="kill_ball" x="512" y="320" width="32" height="32">
+   <properties>
+    <property name="path" value="86"/>
+    <property name="speed" type="int" value="12"/>
+   </properties>
+  </object>
+  <object id="85" type="kill_ball_node" x="480" y="320" width="32" height="32"/>
+  <object id="86" type="kill_ball_node" x="512" y="256" width="32" height="32"/>
+  <object id="87" type="kill_ball" x="576" y="352" width="32" height="32">
+   <properties>
+    <property name="path" value="88"/>
+    <property name="speed" type="int" value="12"/>
+   </properties>
+  </object>
+  <object id="88" type="kill_ball_node" x="512" y="352" width="32" height="32"/>
+  <object id="89" type="kill_ball" x="512" y="384" width="32" height="32">
+   <properties>
+    <property name="path" value="93"/>
+    <property name="speed" type="int" value="12"/>
+   </properties>
+  </object>
+  <object id="90" type="kill_ball" x="544" y="448" width="32" height="32">
+   <properties>
+    <property name="path" value="94"/>
+    <property name="speed" type="int" value="12"/>
+   </properties>
+  </object>
+  <object id="91" type="kill_ball" x="576" y="384" width="32" height="32">
+   <properties>
+    <property name="path" value="95"/>
+    <property name="speed" type="int" value="12"/>
+   </properties>
+  </object>
+  <object id="92" type="kill_ball" x="608" y="448" width="32" height="32">
+   <properties>
+    <property name="path" value="96"/>
+    <property name="speed" type="int" value="12"/>
+   </properties>
+  </object>
+  <object id="93" type="kill_ball_node" x="512" y="448" width="32" height="32"/>
+  <object id="94" type="kill_ball_node" x="544" y="384" width="32" height="32"/>
+  <object id="95" type="kill_ball_node" x="576" y="448" width="32" height="32"/>
+  <object id="96" type="kill_ball_node" x="608" y="384" width="32" height="32"/>
+  <object id="98" type="wall" x="384" y="256" width="64" height="32"/>
+  <object id="99" type="wall" x="544" y="256" width="64" height="32"/>
+  <object id="100" type="wall" x="384" y="288" width="32" height="32"/>
+  <object id="101" type="wall" x="576" y="288" width="32" height="32"/>
+ </objectgroup>
+</map>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.4" orientation="orthogonal" renderorder="right-down" width="32" height="24" tilewidth="32" tileheight="32" infinite="0" backgroundcolor="#000000" nextobjectid="30">
+ <properties>
+  <property name="on_enter">local state=  states.get_state(&quot;game&quot;)
+local label = state.message_label
+local message=  &quot;You got this!&quot;
+
+label:set_text(message)
+
+state.timer:after(5, function()
+
+                label:set_text(&quot;&quot;)
+
+end)</property>
+ </properties>
+ <tileset firstgid="1" name="blue" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="../graphics/blue.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="2" name="white" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="../graphics/white.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="3" name="blue" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="../graphics/blue.png" width="32" height="32"/>
+ </tileset>
+ <layer name="floor" width="32" height="24">
+  <data encoding="csv">
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,1,
+1,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,
+1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,1,
+1,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,
+1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+</data>
+ </layer>
+ <objectgroup name="entities">
+  <properties>
+   <property name="collidable" type="bool" value="true"/>
+  </properties>
+  <object id="6" type="spawn" x="64" y="288" width="32" height="160"/>
+  <object id="10" type="exit" x="928" y="288" width="32" height="160">
+   <properties>
+    <property name="map_name" value="four"/>
+   </properties>
+  </object>
+  <object id="12" type="wall" x="32" y="256" width="960" height="32"/>
+  <object id="13" type="kill_spinner" x="736" y="352" width="32" height="32">
+   <properties>
+    <property name="blades" type="int" value="3"/>
+    <property name="distance" type="int" value="32"/>
+    <property name="teeth" type="int" value="2"/>
+   </properties>
+  </object>
+  <object id="20" type="wall" x="32" y="448" width="960" height="32"/>
+  <object id="21" type="wall" x="960" y="288" width="32" height="160"/>
+  <object id="22" type="wall" x="32" y="288" width="32" height="160"/>
+  <object id="23" type="kill_spinner" x="576" y="352" width="32" height="32">
+   <properties>
+    <property name="blades" type="int" value="3"/>
+    <property name="distance" type="int" value="32"/>
+    <property name="teeth" type="int" value="2"/>
+   </properties>
+  </object>
+  <object id="24" type="kill_spinner" x="416" y="352" width="32" height="32">
+   <properties>
+    <property name="blades" type="int" value="3"/>
+    <property name="distance" type="int" value="32"/>
+    <property name="teeth" type="int" value="2"/>
+   </properties>
+  </object>
+  <object id="25" type="kill_spinner" x="256" y="352" width="32" height="32">
+   <properties>
+    <property name="blades" type="int" value="3"/>
+    <property name="distance" type="int" value="32"/>
+    <property name="teeth" type="int" value="2"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
